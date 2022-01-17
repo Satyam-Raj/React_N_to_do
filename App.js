@@ -2,6 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, FlatList } from 'react-native';
 import React, { useState } from 'react';
 import Header from './components/header';
+import TodoItem from './components/todoItem';
 
 export default function App() {
 
@@ -24,7 +25,7 @@ export default function App() {
             <FlatList 
               data = {todos}
               renderItem = {({item}) => (
-                <Text>{item.text}</Text>
+                <TodoItem item = {item} />
               )}
             
             />
@@ -47,7 +48,7 @@ const styles = StyleSheet.create({
     // justifyContent: 'center',
   },
   content: {
-    paddingTop: 50,
+    paddingTop: 40,
     alignItems: 'center',
     
   }
